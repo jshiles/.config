@@ -1,16 +1,12 @@
--- lua/plugins/theme.lua
+-- =================================================================
+-- Theme
+-- =================================================================
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false, -- make sure it loads first
-		priority = 1000, -- make sure it loads first
-		opts = {
-			style = "storm", -- Other options: night, day, moon
-			-- vim.o.guifont = "Hack Nerd Font:h10",
-		},
-		config = function(_, opts)
-			require("tokyonight").setup(opts)
-			vim.cmd.colorscheme("tokyonight-storm")
-		end,
-	},
+   "folke/tokyonight.nvim",
+   lazy = false, -- make sure the theme is loaded first
+   priority = 1000, -- make sure to load this before all the other start plugins
+   config = function()
+      vim.cmd("colorscheme tokyonight-storm")
+   end,
 }
+
