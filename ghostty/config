@@ -1,9 +1,7 @@
 theme = tokyonight-storm
 font-family = "Hack Nerd Font Mono"
 
-quick-terminal-position = right
-quick-terminal-animation-duration = 0
-quick-terminal-autohide = false
+quick-terminal-position = center
 keybind = global:cmd+j=toggle_quick_terminal
 
 keybind = super+p=text:\x06
