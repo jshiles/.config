@@ -1,9 +1,19 @@
-theme = tokyonight-storm
+# Look and feel
+theme = TokyoNight Storm
 font-family = "Hack Nerd Font Mono"
+font-size=11
+# background-opacity = 0.95
 
+# Quick terminal 
 quick-terminal-position = center
-keybind = global:cmd+j=toggle_quick_terminal
+keybind = global:cmd+g=toggle_quick_terminal
 
+# Special keybinds
 keybind = super+p=text:\x06
+keybind = super+o=text:\x06
+keybind = super+l=goto_split:right
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:down
+keybind = super+k=goto_split:up
 
-   
+keybind = shift+enter=text:\x1b\r

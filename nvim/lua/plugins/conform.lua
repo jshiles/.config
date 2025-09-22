@@ -1,13 +1,23 @@
 return {
-	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v3.x",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
-		"MunifTanjim/nui.nvim",
-	},
+	"stevearc/conform.nvim",
+	opts = {},
 	config = function()
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
-		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff", "pyright" },
+			},
+			format_on_save = {
+				-- These options will be passed to conform.format()
+				timeout_ms = 1000,
+				lsp_format = "fallback",
+			},
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*",
+				callback = function(args)
+					require("conform").format({ bufnr = args.buf })
+				end,
+			}),
+		})
 	end,
 }
