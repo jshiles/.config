@@ -13,4 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 vim.api.nvim_set_option("clipboard", "unnamed")
 
 require("vim-ui")
+require("autocmds")
 require("lazy").setup("plugins")

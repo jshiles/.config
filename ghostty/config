@@ -13,7 +13,7 @@ keybind = super+p=text:\x06
 keybind = super+o=text:\x06
 keybind = super+l=goto_split:right
 keybind = super+h=goto_split:left
-keybind = super+j=goto_split:down
-keybind = super+k=goto_split:up
+# keybind = super+j=goto_split:down
+# keybind = super+k=goto_split:up
 
 keybind = shift+enter=text:\x1b\r
